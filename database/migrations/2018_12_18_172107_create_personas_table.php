@@ -15,11 +15,11 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('email');
+            $table->string('nombre', 200);
+            $table->string('apellido', 200);
+            $table->string('email', 100)->nullable();
             $table->integer('dni');
-            $table->string('celular');
+            $table->string('celular', 100)->nullable();
             $table->timestamps();
         });
     }

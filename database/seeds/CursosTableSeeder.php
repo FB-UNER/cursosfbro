@@ -20,7 +20,10 @@ class CursosTableSeeder extends Seeder
         foreach(App\Curso::all() as $curso) {
 
             foreach(App\Campo::all() as $campo) {
+
+                if (rand(1, 10) < 4) {
                         $curso->campos()->attach($campo->id);
+                }
             }
             $curso->save();
         }

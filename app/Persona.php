@@ -10,7 +10,7 @@ class Persona extends Model
 
 	public function cursos(){
 
-		return $this->belongsToMany('\App\Cursos','curso_personas')
+		return $this->belongsToMany('\App\Curso','curso_persona')
 	            ->withPivot('curso_id');
 	}
 
