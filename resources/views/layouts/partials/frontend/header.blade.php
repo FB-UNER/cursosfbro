@@ -26,7 +26,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @endif
                         @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><!--a href="{{ route('register') }}">Register</a></li-->
                         @endif
                     @else
                         @if (Route::has('impersonate.stop') && Auth::user()->can('stopImpersonate', \App\User::class))
