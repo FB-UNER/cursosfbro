@@ -15,15 +15,12 @@ class PersonasTableSeeder extends Seeder
     {
      factory(Persona::class)->times(10)->create();
 
-
+     $listaPersona = App\Persona::all()->random(2);
         // give each member some badges
-        foreach(App\Persona::all() as $persona) {
-
-            foreach(App\Curso::all() as $curso) {
-
-                if (rand(1,4)) {
+        //foreach(App\Persona::all()->ramdom(4) as $persona) {
+		foreach($listaPersona as $persona) {
+            foreach(App\Curso::all()->random(3) as $curso) {
                         $persona->cursos()->attach($curso->id);
-                }
             }
             $persona->save();
         }

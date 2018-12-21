@@ -13,17 +13,15 @@ class CursosTableSeeder extends Seeder
     public function run()
     {
         //factory(Curso::class)->times(4)->create();
+    	$cantidadCursos = config('dataTest.CURSOS');
+    	$cursosRecorrer = config('dataTest.CURSOS_RANDOM');
 
-		factory(App\Curso::class, 4)->create();
-
+		factory(Curso::class)->times($cantidadCursos)->create();
         // give each member some badges
-        foreach(App\Curso::all() as $curso) {
+        foreach(App\Curso::all()->random($cursosRecorrer) as $curso) {
 
-            foreach(App\Campo::all() as $campo) {
-
-                if (rand(1, 10) < 4) {
+            foreach(App\Campo::all()->random(config('dataTest.CAMPOS_CURSOS')) as $campo) {
                         $curso->campos()->attach($campo->id);
-                }
             }
             $curso->save();
         }
