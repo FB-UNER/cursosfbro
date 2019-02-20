@@ -19,9 +19,8 @@ class CursosTableSeeder extends Seeder
 		factory(Curso::class)->times($cantidadCursos)->create();
         // give each member some badges
         foreach(App\Curso::all()->random($cursosRecorrer) as $curso) {
-
             foreach(App\Campo::all()->random(config('dataTest.CAMPOS_CURSOS')) as $campo) {
-                        $curso->campos()->attach($campo->id);
+                        $curso->campos()->attach($campo->id, ['dato' => 'Pua']);
             }
             $curso->save();
         }

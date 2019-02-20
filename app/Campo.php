@@ -12,5 +12,10 @@ class Campo extends Model
 	     ->withPivot('curso_id'); 
 	 } 
  
- 
+ /*
+ public function personas(){
+	    	return $this->belongsToMany('\App\Persona','campo_curso_persona')
+	     ->withPivot('persona_id'); 
+	 }
+*/
 }

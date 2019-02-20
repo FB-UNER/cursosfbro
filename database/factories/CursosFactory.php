@@ -8,6 +8,6 @@ $factory->define(App\Curso::class, function (Faker $faker) {
    //   $faker->addProvider(new Faker\Provider\es_ES\Person($faker));
    
     return [
-        'nombre' => $faker->text
+        'nombre' => $faker->RealText(200)
     ];
 });

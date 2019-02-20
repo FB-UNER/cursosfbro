@@ -10,7 +10,7 @@ $factory->define(\App\Campo::class, function (Fakers $faker) {
       $faker->addProvider(new Faker\Provider\es_ES\Person($faker));
    
     return [
-        'carrera' => $faker->name
+        'nombre_campo' => $faker->name
     ];
 });
 

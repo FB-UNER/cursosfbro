@@ -19,6 +19,7 @@ class CreateCampoCursoTable extends Migration
             $table->foreign('campo_id')->references('id')->on('campos');
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->string('dato');
             $table->timestamps();
         });
     }

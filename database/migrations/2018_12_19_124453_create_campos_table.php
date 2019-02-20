@@ -15,7 +15,7 @@ class CreateCamposTable extends Migration
     {
         Schema::create('campos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('carrera');
+            $table->string('nombre_campo');
             $table->timestamps();
         });
     }

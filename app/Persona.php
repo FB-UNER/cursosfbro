@@ -24,6 +24,7 @@ class Persona extends Model
         return $this->belongsToMany('\App\Pago','curso_pago_persona')
             ->withPivot('curso_id','status'); 
     }
+    
 
 
 }
